@@ -1,7 +1,7 @@
 id: app
 title: New Compliance App
 type: project
-version: 0.1.1
+version: 0.1.2
 icon: app.png
 introduction:
   format: markdown
@@ -22,7 +22,7 @@ catalog:
       Edit this Markdown file to provide a long description of your compliance app.
       The contents of this file will be displayed in the GovReady-Q Compliance Apps
       Catalog.
-  version: 0.1.0
+  version: 0.1.2
 questions:
 - id: module_1
   title: Secure Engineering Foundations
