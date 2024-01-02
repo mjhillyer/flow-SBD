@@ -1,0 +1,328 @@
+id: module_5
+title: Module 5
+output:
+- id: artifact_1
+  format: markdown
+  title: What You Chose
+  template: '{{q1}}'
+questions:
+- id: q1
+  title: Minimum Security Requirements
+  prompt: |-
+    Minimum Security Requirements
+
+    These are minimum security requirements
+  type: interstitial
+  choices:
+  - key: startrek
+    text: Star Trek
+  - key: starwars
+    text: Star Wars
+  - key: lordoftherings
+    text: Lord of the Rings
+  - key: other
+    text: Other
+- id: q0
+  title: Authentication Credentials
+  prompt: Are all of the authentication credentials configurable and changeable?
+  type: yesno
+- id: q2
+  title: Roles of Least Privilege
+  prompt: >-
+    Does the product support user/role privilege levels that restrict user/role
+        permissions to the minimum required to perform necessary defined functions?
+  type: yesno
+- id: q3
+  title: Encryption at Rest
+  prompt: >-
+    Does the product encrypt all PII, PHI, and sensitive data (including authentication
+        credentials) at rest using FIPS 140-3 compliant Level 1 or better encryption?
+  type: yesno
+- id: q4
+  title: Encryption in Transit
+  prompt: |-
+    Does the product encrypt all PII, PHI, and other sensitive data (including
+        authentication credentials) in transit using FIPS 140-3 compliant Level 1 or higher
+        standards for ciphers and key sizes?
+  type: yesno
+- id: q5
+  title: Secure Wipe
+  prompt: |-
+    Does the product provide the capability to securely remove all PHI, PII,
+        and other sensitive data on demand, such that, at a minimum, the cryptographic
+        key for encrypted data is destroyed, or all data is overwritten with at least
+        one pass of all 1s or all 0s?
+  type: yesno
+- id: q6
+  title: Product Hardening
+  prompt: |-
+    Is the product hardened (all unneeded ports, software, and services are
+        removed and/or disabled by default)?
+  type: yesno
+- id: q7
+  title: Malicious Software Protections
+  prompt: |-
+    Does the product include protection from malicious software (e.g., anti-virus,
+        application whitelisting)?
+  type: yesno
+- id: q8
+  title: Audit Logging
+  prompt: |-
+    Does the product provide audit logging capability for both clinical/application
+        and system events?
+  type: yesno
+- id: q9
+  title: Product Security Controls Assessment
+  prompt: |-
+    Security Controls
+
+    This module will ask you about your product functionality to determine what security controls should be implemented into the product design.
+  type: interstitial
+- id: q10
+  title: Remote Service
+  prompt: Will the product be capable of Remote Service?
+  type: yesno
+- id: q11
+  title: Cloud Hosted
+  prompt: Is the product a cloud hosted software or service?
+  type: yesno
+- id: q12
+  title: Mobile
+  prompt: Is the device mobile and could easily be stolen?
+  type: yesno
+- id: q13
+  title: PII / PHI
+  prompt: |-
+    Will this product  display, transmit, store, or modify personally identifiable
+        information?
+  type: yesno
+- id: q14
+  title: Medical Urgency
+  prompt: |-
+    Does the product need to facilitate medical urgency needs and therefore
+        is required to have a low barrier to user access?
+  type: yesno
+- id: q15
+  title: Number of records
+  prompt: Does the product store more than 500 patient records?
+  type: yesno
+- id: q16
+  title: High Availability
+  prompt: Does the product require high availability (99.9+ uptime)?
+  type: yesno
+- id: q17
+  title: Official Record
+  prompt: Does the product store an official medical record? (EMR, PACS, etc...)
+  type: yesno
+- id: q18
+  title: Wireless
+  prompt: Will the product have wireless capabilities (Wi-Fi, Bluetooth, 5G)?
+  type: yesno
+- id: q19
+  title: DOD Customer
+  prompt: |-
+    Will the product be sold to the US Department of Defence (DOD) or Veterans
+        Affairs (VA)?
+  type: yesno
+- id: q20
+  title: Multiple Customer / Site Use
+  prompt: Will the product be multi-site use (Trailer based MR, etc)?
+  type: yesno
+- id: q21
+  title: Removable Media
+  prompt: Will the product contain removable media? (CD-Rom, USB, etc)
+  type: yesno
+- id: q22
+  title: New Question Title
+  prompt: |-
+    The device's ability to prevent access and misuse by unauthorized users
+        if device is left idle for a period of time.
+  type: yesno
+- id: q23
+  title: New Question Title
+  prompt: |-
+    Can the device be configured to force reauthorization of logged-in user(s)
+        after a predetermined length of inactivity (e.g., auto-logoff, session lock, password
+        protected screen saver)?
+  type: yesno
+- id: q24
+  title: New Question Title
+  prompt: |-
+    Is the length of inactivity time before auto-logoff/screen lock user or
+        administrator configurable?
+  type: yesno
+- id: q25
+  title: New Question Title
+  prompt: |-
+    Can the medical device create additional audit logs or reports beyond standard
+        operating system logs?
+  type: yesno
+- id: q26
+  title: New Question Title
+  prompt: Does the audit log record a USER ID?
+  type: yesno
+- id: q27
+  title: New Question Title
+  prompt: Does other personally identifiable information exist in the audit trail?
+  type: yesno
+- id: q28
+  title: New Question Title
+  prompt: |-
+    Are events recorded in an audit log? If yes, indicate which of the following
+        events are recorded in the audit log
+  type: yesno
+- id: q29
+  title: New Question Title
+  prompt: Successful login/logout attempts?
+  type: yesno
+- id: q30
+  title: New Question Title
+  prompt: Unsuccessful login/logout attempts?
+  type: yesno
+- id: q31
+  title: New Question Title
+  prompt: Modification of user privileges?
+  type: yesno
+- id: q32
+  title: New Question Title
+  prompt: Creation/modification/deletion of users?
+  type: yesno
+- id: q33
+  title: New Question Title
+  prompt: Presentation of clinical or PII data (e.g. display, print)?
+  type: text
+- id: q34
+  title: New Question Title
+  prompt: Creation/modification/deletion of data?
+  type: yesno
+- id: q35
+  title: New Question Title
+  prompt: |-
+    Import/export of data from removable media (e.g. USB drive, external hard
+        drive, DVD)?
+  type: yesno
+- id: q36
+  title: New Question Title
+  prompt: |-
+    Receipt/transmission of data or commands over a network or point-to-point
+        connection?
+  type: yesno
+- id: q37
+  title: New Question Title
+  prompt: Remote or on-site support?
+  type: yesno
+- id: q38
+  title: New Question Title
+  prompt: Application Programming Interface (API) and similar activity?
+  type: yesno
+- id: q39
+  title: New Question Title
+  prompt: Emergency access?
+  type: yesno
+- id: q40
+  title: New Question Title
+  prompt: Other events (e.g., software updates)?
+  type: yesno
+- id: q41
+  title: New Question Title
+  prompt: Is the audit capability documented in more detail?
+  type: yesno
+- id: q42
+  title: New Question Title
+  prompt: |-
+    Can the owner/operator define or select which events are recorded in the
+        audit log?
+  type: yesno
+- id: q43
+  title: New Question Title
+  prompt: |-
+    Is a list of data attributes that are captured in the audit log for an event
+        available?
+  type: yesno
+- id: q44
+  title: New Question Title
+  prompt: Does the audit log record date/time?
+  type: yesno
+- id: q45
+  title: New Question Title
+  prompt: |-
+    Can date and time be synchronized by Network Time Protocol (NTP) or equivalent
+        time source?
+  type: yesno
+- id: q46
+  title: New Question Title
+  prompt: Can audit log content be exported?
+  type: yesno
+- id: q47
+  title: New Question Title
+  prompt: Via physical media?
+  type: yesno
+- id: q48
+  title: New Question Title
+  prompt: Via IHE Audit Trail and Node Authentication (ATNA) profile to SIEM?
+  type: yesno
+- id: q49
+  title: New Question Title
+  prompt: Via Other communications (e.g., external service device, mobile applications)?
+  type: yesno
+- id: q50
+  title: New Question Title
+  prompt: Are audit logs encrypted in transit or on storage media?
+  type: yesno
+- id: q51
+  title: New Question Title
+  prompt: Can audit logs be monitored/reviewed by owner/operator?
+  type: yesno
+- id: q52
+  title: New Question Title
+  prompt: Are audit logs protected from modification?
+  type: yesno
+- id: q53
+  title: New Question Title
+  prompt: Are audit logs protected from access?
+  type: yesno
+- id: q54
+  title: New Question Title
+  prompt: Can audit logs be analyzed by the device?
+  type: yesno
+- id: q55
+  title: New Question Title
+  prompt: |-
+    Does the device prevent access to unauthorized users through user login
+        requirements or other mechanism?
+  type: yesno
+- id: q56
+  title: New Question Title
+  prompt: |-
+    Can the device be configured to use federated credentials management of
+        users for authorization (e.g., LDAP, OAuth)?
+  type: yesno
+- id: q57
+  title: New Question Title
+  prompt: Can the customer push group policies to the device (e.g., Active Directory)?
+  type: yesno
+- id: q58
+  title: New Question Title
+  prompt: Are any special groups, organizational units, or group policies required?
+  type: yesno
+- id: q59
+  title: New Question Title
+  prompt: |-
+    Can users be assigned different privilege levels based on 'role' (e.g.,
+        user, administrator, and/or service, etc.)?
+  type: yesno
+- id: q60
+  title: New Question Title
+  prompt: |-
+    Can the device owner/operator grant themselves unrestricted administrative
+        privileges (e.g., access operating system or application via local root or administrator
+        account)?
+  type: yesno
+- id: q61
+  title: New Question Title
+  prompt: Does the device authorize or control all API access requests?
+  type: yesno
+- id: q62
+  title: New Question Title
+  prompt: Does the device run in a restricted access mode, or ‘kiosk mode’, by default?
+  type: yesno
