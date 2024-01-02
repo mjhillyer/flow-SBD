@@ -1,0 +1,112 @@
+id: module_2
+title: Module 2
+output:
+- id: artifact_1
+  format: markdown
+  title: What You Chose
+  template: '{{q1}}'
+questions:
+- id: q1
+  title: Environmental and Design Risk Analysis
+  prompt: |-
+    Perform the product Environmental and Design Risk Analysis
+
+    This module will help you assess the environmental and design risks of the product.
+  type: interstitial
+  choices:
+  - key: startrek
+    text: Star Trek
+  - key: starwars
+    text: Star Wars
+  - key: lordoftherings
+    text: Lord of the Rings
+  - key: other
+    text: Other
+- id: q0
+  title: Baseline Risk Level
+  prompt: What is the initial Risk level for the product?
+  type: choice
+  choices:
+  - key: Low
+    text: Low
+    help: Low impact indicates that the loss of confidentiality, integrity, or availability
+      is expected to have a limited adverse effect on organizational operations, organizational
+      assets, or individuals.
+  - key: Moderate
+    text: Moderate
+    help: Moderate impact indicates that the loss of confidentiality, integrity, or
+      availability is expected to have a serious adverse effect on organizational
+      operations, organizational assets, or individuals.
+  - key: High
+    text: High
+    help: High impact indicates the loss of confidentiality, integrity, or availability
+      is expected to have a severe or catastrophic adverse effect on organizational
+      operations, organizational assets, or individuals.
+  actions:
+  - action: system/assign_baseline/NIST_SP-800-53_rev4=+=low
+    comment: Assign 800-53 Rev 4 Low baseline set of controls to a system
+    value: Low
+  - action: system/assign_baseline/NIST_SP-800-53_rev4=+=moderate
+    comment: Assign 800-53 Rev 4 Moderate baseline set of controls to a system
+    value: Moderate
+  - action: system/assign_baseline/NIST_SP-800-53_rev4=+=high
+    comment: Assign 800-53 Rev 4 High baseline set of controls to a system
+    value: High
+- id: q2
+  title: Product Deployment Method
+  prompt: How will this product be deployed for commercial use?
+  type: choice
+  choices:
+  - key: application
+    text: Application Package
+    help: Any type of stand-alone software application for servers or workstations.
+  - key: device
+    text: Device
+    help: Any type of device that contains software and hardware.
+  - key: mobile
+    text: Mobile Application
+    help: Software designed for mobile devices.
+  - key: cloud
+    text: Cloud
+    help: Application hosted as a SAAS (internal or external).
+  - key: other
+    text: Other
+    help: Does not match any other platform technology.
+- id: q3
+  title: Product Operating System
+  prompt: What operating system(s) will this product use?
+  type: multiple-choice
+  min: 0
+  choices:
+  - key: win
+    text: Microsoft Windows
+  - key: linux
+    text: Linux or Unix
+  - key: macos
+    text: Apple Macintosh OS X
+  - key: ios
+    text: Apple iOS
+  - key: android
+    text: Android
+  max: ~
+- id: q4
+  title: Windows Versions
+  prompt: What kind of windows operating systems will your product use?
+  type: multiple-choice
+  min: 1
+  impute:
+  - condition: '"win" not in q3'
+    value: ~
+  choices:
+  - key: wks
+    text: Windows Workstation
+    help: 'Versions for desktop and workstations, for example: Windows 10'
+  - key: svr
+    text: Windows Server
+    help: 'Versions for servers, for example: Windows Server 2019'
+  max: ~
+- id: q5
+  title: Operating System Lifespan
+  prompt: Provide an estimate of the anticipated date for the end of life of the product's
+    operating system.
+  type: date
