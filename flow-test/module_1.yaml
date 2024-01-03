@@ -5,6 +5,30 @@ output:
   format: markdown
   title: What You Chose
   template: '{{q1}}'
+- id: team_charter
+  title: Engineering Team Cybersecurity Champion Charter
+  format: markdown
+  filename: templates/ssp_v1.md
+  template: "# Cybersecurity Champion Charter\r\n\r\nThe Product Cybersecurity Champions
+    will be responsible for creating and maintaining the cybersecurity artifacts necessary
+    for the successful implementation of the Secure Product Development Framework
+    for the Orion Project. They will work closely with other members of the development
+    team to ensure that cybersecurity considerations are integrated into every aspect
+    of product design and development.\r\n\r\nIn addition to their artifact creation
+    and maintenance responsibilities, the Product Cybersecurity Champions will also
+    be responsible for facilitating the execution of the required cybersecurity activities
+    outlined in the Secure Product Development Framework. This includes identifying
+    potential security threats and vulnerabilities, developing, and implementing appropriate
+    countermeasures, and ensuring that all cybersecurity policies and procedures are
+    followed.\r\n\r\nThe Product Cybersecurity Champions will serve as the primary
+    point of contact for all cybersecurity-related issues and concerns within the
+    product development team. They will work closely with other teams, including quality
+    assurance and compliance, to ensure that all security requirements are met and
+    that our products are developed with the highest possible level of security.\r\n\r\n
+    \r\n\r\nThe Product Cybersecurity Champions Are:\r\n\r\n\r\n\r\n| Name | Title
+    | Email |\r\n| ---- | ----- | ----- |\r\n|      |       |       |\r\n|      |
+    \      |       |\r\n|      |       |       |\r\n|      |       |       |\r\n|
+    \     |       |       |"
 questions:
 - id: q1
   title: Engineering Cybersecurity Foundations
@@ -132,8 +156,8 @@ questions:
   prompt: Please provide a description of the product.
   type: longtext
 - id: q12
-  title: Describe the Intended use of the product.
-  prompt: Enter some text.
+  title: Intended Use
+  prompt: Describe the Intended use of the product.
   type: longtext
 - id: q9
   title: Product Version

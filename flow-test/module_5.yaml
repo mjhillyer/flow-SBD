@@ -6,22 +6,6 @@ output:
   title: What You Chose
   template: '{{q1}}'
 questions:
-- id: q1
-  title: Minimum Security Requirements
-  prompt: |-
-    Minimum Security Requirements
-
-    These are minimum security requirements
-  type: interstitial
-  choices:
-  - key: startrek
-    text: Star Trek
-  - key: starwars
-    text: Star Wars
-  - key: lordoftherings
-    text: Lord of the Rings
-  - key: other
-    text: Other
 - id: q0
   title: Authentication Credentials
   prompt: Are all of the authentication credentials configurable and changeable?
@@ -190,7 +174,7 @@ questions:
 - id: q33
   title: New Question Title
   prompt: Presentation of clinical or PII data (e.g. display, print)?
-  type: text
+  type: yesno
 - id: q34
   title: New Question Title
   prompt: Creation/modification/deletion of data?

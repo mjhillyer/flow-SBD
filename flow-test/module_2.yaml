@@ -52,7 +52,7 @@ questions:
   - action: system/assign_baseline/NIST_SP-800-53_rev4=+=high
     comment: Assign 800-53 Rev 4 High baseline set of controls to a system
     value: High
-- id: q2
+- id: deploy_type
   title: Product Deployment Method
   prompt: How will this product be deployed for commercial use?
   type: choice
@@ -72,6 +72,73 @@ questions:
   - key: other
     text: Other
     help: Does not match any other platform technology.
+- id: q6
+  title: Cloud Service Model
+  prompt: What kind of cloud service model is used by your product?
+  type: choice
+  choices:
+  - key: saas
+    text: Software as a Service
+    help: "SaaS systems are typically accessed online via a subscription rather than
+      something that is bought and installed\r\non premises. Examples of SaaS are
+      Google Apps, Salesforce, Dropbox, etc.\r\nSaaS systems allow for the consumer
+      to build anything other than servers. \r\n"
+  - key: paas
+    text: Platform as a Service
+    help: "PaaS systems are typically hardware and software tools available over the
+      internet.\r\nExamples of PaaS are AWS Elastic Beanstalk, Windows Azure, OpenShift,
+      Force.com, etc.\r\nPaaS systems can build non-server things, databases, offers
+      APIs or other developer toolkits.\r\n"
+  - key: iaas
+    text: Infrastructure as a Service
+    help: "IaaS systems are cloud-based services, pay-as-you-go for services such
+      as storage, networking, and virtualization.\r\nExamples of IaaS are AWS EC2,
+      Rackspace, Google Compute Engine (GCE) Digital Ocean, etc.\r\nIaaS systems are
+      the only system type that can build servers.\r\n"
+  - key: other
+    text: Other?
+  impute:
+  - condition: deploy_type != 'cloud'
+    value: ~
+- id: cloud_service_model_other
+  title: Other System
+  prompt: |-
+    Does your system fit outside the bounds of SaaS, PaaS, or IaaS?
+    If you feel your system is not any of these types, explain the system below.
+  type: longtext
+  impute:
+  - condition: q6 != 'other'
+    value: ~
+- id: cloud_model
+  title: Cloud Deployment Model
+  prompt: |-
+    Service Provider Cloud Deployment Model
+    What is your system's cloud deployment model?
+  type: choice
+  choices:
+  - key: public
+    text: Public (Cloud services and infrastructure supporting multiple organizations
+      and agency clients)
+  - key: private
+    text: Private (Cloud services and infrastructure dedicated to a specific organization/agency
+      and no other clients)
+  - key: govt_only
+    text: Government Only Community (Cloud services and infrastructure shared by several
+      organizations/agencies with same policy and compliance considerations)
+  - key: hybrid
+    text: Hybrid (Need to explain)
+  impute:
+  - condition: deploy_type != 'cloud'
+    value: ~
+- id: choice_hybrid
+  title: Hybrid Cloud Deployment Model
+  prompt: |-
+    You selected "Hybrid" as your system status.
+    Could you explain?
+  type: longtext
+  impute:
+  - condition: cloud_model != 'hybrid'
+    value: ~
 - id: q3
   title: Product Operating System
   prompt: What operating system(s) will this product use?
@@ -110,3 +177,25 @@ questions:
   prompt: Provide an estimate of the anticipated date for the end of life of the product's
     operating system.
   type: date
+- id: q2
+  title: Product Technical Design Assessment
+  prompt: This module will guide you through assessing technical risk in the product
+    design.
+  type: interstitial
+- id: ports_protocols_services
+  title: Ports, Protocols, and Services
+  prompt: What are the ports, protocols, and services for the product?
+  type: datagrid
+  min: 0
+  fields:
+  - key: Ports(TCP/UDP)
+    text: Ports(TCP/UDP)
+  - key: Protocols
+    text: Protocols
+  - key: Services
+    text: Services
+  - key: Purpose
+    text: Purpose
+  - key: Used By
+    text: Used By
+  max: ~
