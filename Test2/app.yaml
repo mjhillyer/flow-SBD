@@ -9,6 +9,7 @@ introduction:
     Use this app to achieve compliance.
 input: []
 catalog:
+  title: Test2
   category: Hologic
   vendor: Hologic
   vendor_url: http://hologic.com
@@ -62,7 +63,6 @@ questions:
   title: Product Documentation
   type: module
   module-id: module_10
-
 output:
 
 - id: ssp_nist80053r4_SI-1
