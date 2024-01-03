@@ -8,19 +8,20 @@ introduction:
   template: |
     Use this app to achieve compliance.
 input: []
+output: []
 catalog:
   title: Test2
   category: Hologic
-  vendor: Hologic
-  vendor_url: http://hologic.com
+  vendor: GovReady
+  vendor_url: ~
   status: stub
-  source_url: https://github.com/mjhillyer/flow-SBD
+  source_url: ~
   description:
     short: Modules for managing Secure by Design activities.
-        long: >
-          Edit this Markdown file to provide a long description of your compliance app.
-          The contents of this file will be displayed in the GovReady-Q Compliance Apps
-          Catalog.
+    long: >
+      Edit this Markdown file to provide a long description of your compliance app.
+      The contents of this file will be displayed in the GovReady-Q Compliance Apps
+      Catalog.
   version: 0.1
 questions:
 - id: module_1
@@ -36,7 +37,7 @@ questions:
   type: module
   module-id: module_3
 - id: module_4
-  title: Privacy and Data Risk Analysis
+  title: Privacy and Data RIsk Analysis
   type: module
   module-id: module_4
 - id: module_5
@@ -44,68 +45,22 @@ questions:
   type: module
   module-id: module_5
 - id: module_6
-  title: 3rd Party Component Risk Management
+  title: Module 6
   type: module
   module-id: module_6
 - id: module_7
-  title: Product Concept Technical Design Review
+  title: Module 7
   type: module
   module-id: module_7
 - id: module_8
-  title: Security Testing
+  title: Module 8
   type: module
   module-id: module_8
 - id: module_9
-  title: Product Security Risk Assessment Summary
+  title: Module 9
   type: module
   module-id: module_9
 - id: module_10
-  title: Product Documentation
+  title: Module 10
   type: module
   module-id: module_10
-output:
-
-- id: ssp_nist80053r4_SI-1
-  title: NIST 800-53r4 SI-1 System and Information Integrity Policy and Procedures
-  format: markdown
-  template: >+
-    {% if project.general_info.exists == 'yes' %}
-
-    {{project.general_info.organization}} implements Control SI-1 with its System and Information Integrity Policy and Procedures document
-    officially titled _{{project.general_info.official_name}}_.
-    The System and Information Integrity Policy and Procedures describes {{organization}}'s overall committment and approach to IT system and information integrity.
-    {{project.sip.applies_to}}
-
-    The System and Information Integrity Policy and Procedures document is maintained as a {{project.general_info.source_repo.text}}. {{project.general_info.source_repo_identifier}}
-
-    The {{project.general_info.role_owner}} maintains the System and Information Integrity Policy and Procedures and reviews
-    the System and Information Integrity Policy and Procedures {{project.general_info.review_frequency.text}}. 
-
-    
-    {{project.general_info.obtain}}
-
-    {% if project.general_info.source_public == 'yes' %}
-    The System and Information Integrity Policy and Procedures is available publicly online at [{{project.general_info.source_public_url}}]({{project.general_info.source_public_url}}).
-    {% else %}
-    The System and Information Integrity Policy and Procedures is not available publicly online.
-    {% endif %}
-
-    {% else %}
-
-    {{project.general_info.organization}} will implement Control SI-1 with System and Information Integrity Policy and Procedures document
-    officially titled _{{project.general_info.official_name}}_.
-    The System and Information Integrity Policy and Procedures describes {{organization}}'s overall committment and approach to IT system and information integrity.
-    {{project.sip.applies_to}}
-
-    The System and Information Integrity Policy and Procedures document will be maintained as a {{project.general_info.source_repo.text}}. {{project.general_info.source_repo_identifier}}
-
-    The {{project.general_info.role_owner}} will maintain the System and Information Integrity Policy and Procedures and review
-    them {{project.general_info.review_frequency.text}}. 
-
-    {% if project.general_info.source_public == 'yes' %}
-    The System and Information Integrity Policy and Procedures will be available publicly online at [{{project.general_info.source_public_url}}]({{project.general_info.source_public_url}}).
-    {% else %}
-    The System and Information Integrity Policy and Procedures will not be available publicly online.
-    {% endif %}
-
-    {% endif %}
