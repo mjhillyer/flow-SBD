@@ -1,7 +1,7 @@
 id: app
-title: Test_2
+title: Test2
 type: project
-version: 0.1.3
+version: 0.1
 icon: app.png
 introduction:
   format: markdown
@@ -18,7 +18,7 @@ catalog:
     short: Modules for managing Secure by Design activities.
     long: >-
       Modules for managing Secure by Design activities. Modules for managing Secure by Design activities. Modules for managing Secure by Design activities.
-  version: 0.1.3
+  version: 0.1
 introduction
   format: markdown
   template: >-
@@ -65,7 +65,6 @@ questions:
   type: module
   module-id: module_10
 output:
-
 - id: ssp_nist80053r4_SI-1
   title: NIST 800-53r4 SI-1 System and Information Integrity Policy and Procedures
   format: markdown
